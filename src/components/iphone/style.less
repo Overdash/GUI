@@ -1,0 +1,215 @@
+//@import '~style/helpers';
+@white : #fefefe;
+@black : #000000;
+
+html, body{
+	width: 414px;
+	height: 736px;
+	margin: 0;
+	padding: 0;
+}
+
+/*#main{
+	display : block;
+}
+
+#cal{
+	display: none;
+}*/
+
+.container { 
+	display: flex;
+	flex-direction: column;
+	background-image: url('../../assets/backgrounds/appBG.jpeg');
+	color: #fff;
+	width: 414px;
+	height: 736px;
+	text-align: center;
+	padding-top: 80px;
+	margin: 0 auto;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.details {
+	flex: 4;
+}
+.city {
+	flex: 1;
+	font-size: 1.7em;
+	font-weight: 400;	
+}
+.conditions {
+	flex: 1;
+	font-size: 1em;
+}
+.temperature {
+	//flex: 2;
+	margin-top: 0;
+	font-size: 2.8em;
+	font-weight: 300;
+	//letter-spacing: -6px;
+	position: absolute;
+	left: 50px;
+	bottom: 20px;
+}
+.filled:after {
+	content: "°";
+	//margin: 0 0 0 1rem;
+	font-size: 0.5em;
+	font-weight: 100;
+	display: inline-block;
+	padding-bottom: 25px;
+	vertical-align: middle;
+}
+
+.upperCircle {
+	//opacity: 0.6;
+	background: rgba(17, 6, 144, 0.5);
+	border-radius: 170px;
+	width: 170px;
+	height: 170px;
+	line-height: 80px;
+	color: @white;
+	padding: 50px;
+	text-align: center;
+	position: absolute;
+	left: 190px;
+	top: 90px;
+	stroke-opacity: 1;
+}
+
+.lowerCircle{
+	background: rgba(17, 6, 144, 0.5);
+	border-radius: 170px;
+	width: 170px;
+	height: 170px;
+	line-height: 80px;
+	color: @white;
+	padding: 50px;
+	text-align: center;
+	position: absolute;
+	left: 50px;
+	top: 293px;
+	stroke-opacity: 1;
+}
+
+.locBox {
+	background: rgba(215, 215, 210, 0.7);
+	//border-radius: 414px;
+	width: 414px;
+	height: 100px;
+	line-height: 0;
+	color: @black;
+	text-align: left;
+	position: absolute;
+	top: 503px;
+}
+
+.locBox p{
+	vertical-align: text-top;
+	margin-top: 33px;
+	margin-left: 10px;
+	text-transform: uppercase;
+	font-size: 45px;
+	font-weight: normal;
+	font-family: "Calibri", sans-serif;
+}
+
+.locBox p.little{
+	font-size: 18px;
+	margin-top: 50px;
+	margin-left: 10px;
+}
+
+.rBox{ //Round boxes (the info ones)
+	border-bottom-left-radius: 70px;
+	border-top-left-radius: 70px;
+	padding: 10px;
+	width: 190px;
+	height: 75px;
+	position: absolute;
+	top:138px;
+	left: 60px;
+	background: radial-gradient(circle at 100% , rgba(204,0,0,0) 67px, rgba(32, 93, 214, 0.6) 15px);
+}
+
+.rBox p{
+	position: absolute;
+	left: 22%;
+	word-wrap: break-word;
+	top: 40px;
+	color: rgb(253, 253, 253);
+	font-weight:200;
+	font-size: 13px;
+}
+
+.rBoxBottom{
+	background: radial-gradient(circle at 0 , rgba(204,0,0,0) 67px, rgba(32, 93, 214, 0.6) 15px);
+	border-radius: 0 70px 70px 0;
+	padding: 10px;
+	width: 190px;
+	height: 75px;
+	position: absolute;
+	top: 341px;
+	left: 160px;
+}
+
+.rBoxBottom p{
+	position: absolute;
+	right: 15%;
+	word-wrap: break-word;
+	top: 33px;
+	color: rgb(253, 253, 253);
+	font-weight:200;
+	font-size: 13px;
+}
+
+.sqContainer{
+	background: rgba(182, 182, 182, 0.4);
+	width: 100px;
+	height: 115px;
+	border-radius: 10px;
+	vertical-align: top;
+	horiz-align: center;
+	position: absolute;
+	top: 610px;
+	left: 50px;
+}
+
+.sqContainer p {
+	background: rgba(0,0,0,0.4);
+	border-radius: 60px;
+	width: 80px;
+	position: absolute;
+	padding: 1.5px;
+	left: 10px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.circle{
+	position: inherit;
+	background: rgba(0,0,0,0.4);
+	border-radius: 90px;
+	padding: 35px;
+	width: 60px;
+	height: 60px;
+	bottom: 10px;
+	left: 14.5px;
+}
+
+button.cal {
+	background: rgba(32, 93, 214, 0.6);
+	width: 90px;
+	height: 40px;
+	border-radius: 60px;
+	color: @white;
+	position: absolute;
+	left: 300px;
+	top: 10px;
+}
+
