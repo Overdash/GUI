@@ -51,6 +51,8 @@ export default class Index extends Component {
         let bottoms = 'Joggers';
         let bottomsURL = '../../assets/icons/jpeg/base layers/Joggers.png';
 
+        //This determines the images to use on the containers (Weather and Kit images)
+        //Depending on the condition
         if(this.state.temp < 10){
             topWear = 'Long Sleeve';
             topWearURL = '../../assets/icons/jpeg/base layers/3_Long_sleeve_thermal.png';
@@ -85,7 +87,7 @@ export default class Index extends Component {
         layers += ' Layers';
         const tempStyles = this.state.temp ? `${style.temperature} ${style.filled}` : style.temperature;
 
-        //Find enxt 3 days!
+        //Find next 3 days!
         let now = new Date();
         let day = this.getWeekday(now.getDay());
         let month = this.getMonthString(now.getMonth());
@@ -197,7 +199,7 @@ export default class Index extends Component {
                         <p>1</p>
                     </div>
 
-                    <div class={matchStyle.boxCont} style={"top: 70%;"}>
+                    <div class={matchStyle.boxCont} style={"top: 412px;"}>
                         <p>Conditions</p>
                         <div class={matchStyle.circle} style={"background-image: url('"+currentCondIcon+"');" +
                         "background-repeat: no-repeat; background-position:50% 50%; background-size: 80%"}
@@ -208,11 +210,11 @@ export default class Index extends Component {
                             From the last couple games, it's clear your team performs better in the Rain.
                         </p>
                     </div>
-                    <div class={matchStyle.rBoxLeft} style={"top: 75%;"}>
+                    <div class={matchStyle.rBoxLeft} style={"top: 437px;"}>
                         <span style={"bottom: 25px;"}>YouFC Result:</span>
                         <p>3</p>
                     </div>
-                    <div class={matchStyle.rBoxRight} style={"top: 75%;"}>
+                    <div class={matchStyle.rBoxRight} style={"top: 437px;"}>
                         <span style={"left: 60px;"}>NotYouFC Result:</span>
                         <p>4</p>
                     </div>
