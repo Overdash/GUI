@@ -171,6 +171,7 @@ export default class Index extends Component {
                 </div>
 
                 <div id="match" style={"display:none;"}>
+                    <header style={"font-weight: bold; font-size:25px;"}>Previous Games Overview</header>
                     <button class={style.cal} onClick={this.backHome}>Back</button>
                     <button class={style.cal} onClick={this.changeBG} style={"left: 162px;"}>
                         Change Background
@@ -179,7 +180,7 @@ export default class Index extends Component {
 
                     <div class={matchStyle.boxCont}>
                         <p>Conditions</p>
-                        <div class={matchStyle.circle} style={"background-image: url('../../assets/icons/jpeg/weather/cloudy_Day.png');" +
+                        <div class={matchStyle.circle} style={"background-image: url('../../assets/icons/jpeg/weather/Raining.png');" +
                         "background-repeat: no-repeat; background-position:50% 50%; background-size: 100%"}>
                         </div>
                         <p style={"bottom: -38px;"}>Partly Cloudy</p>
@@ -196,11 +197,12 @@ export default class Index extends Component {
                     <div class={matchStyle.boxCont} style={"top: 70%;"}>
                         <p>Conditions</p>
                         <div class={matchStyle.circle} style={"background-image: url('"+currentCondIcon+"');" +
-                        "background-repeat: no-repeat; background-position:50% 50%; background-size: 80%"}>
+                        "background-repeat: no-repeat; background-position:50% 50%; background-size: 80%"}
+                        onClick={this.changeToKit}>
                         </div>
                         <p style={"bottom: -38px;"}>{this.state.cond}</p>
-                        <p style={"bottom: -150px; left: -80px; width: 300px;"}>
-                            From the last 8 games, it's clear your team performs better in the Rain.
+                        <p style={"bottom: -150px; left: -110px; width: 350px;"}>
+                            From the last couple games, it's clear your team performs better in the Rain.
                         </p>
                     </div>
                     <div class={matchStyle.rBoxLeft} style={"top: 75%;"}>
@@ -215,6 +217,11 @@ export default class Index extends Component {
 
                 <div id="kit" style={"display:none;"}>
                     <button class={style.cal} onClick={this.backHome}>Back</button>
+                    <button class={style.cal} onClick={this.toRecommended} style={"left: 162px;"}>
+                        Recommend. Purchases
+                    </button>
+                    <button class={style.cal} style={"left: 20px;"} onClick={this.changeToNote}>Add Note</button>
+                    <header style={"font-weight: bold; font-size:25px;"}>Recommended Kit</header>
                     <div class={kitStyle.sqContainer}>
                         <span>Thermal</span>
                         <div class={kitStyle.circle} style={"background-image: url('"+topWearURL+"');" +
@@ -249,9 +256,20 @@ export default class Index extends Component {
                     <div style={"position: absolute; left: 37px; top:350px"}>
                         <form>
                             URL to Image: <input type="file" name="bgURL"/> <br/><br/>
-                            <input type="submit" value="Submit" onClick={this.changeToMatch}/>
+                            <input type="submit" class={style.cal} value="Submit" onClick={this.changeToMatch}/>
                         </form>
                     </div>
+                </div>
+
+                <div id="note" style={"display:none;"}>
+                    <header style={"font-weight: bold; font-size:25px;"}>Add Note</header>
+                    <button class={style.cal} onClick={this.changeToKit}>Back</button>
+                    <p style={"position:absolute; top:250px; left:55px;"}>
+                        Add a Note for yourself (Automatically Saves)
+                    </p>
+                    <textarea style={"position:absolute; top:310px; left:100px; width:224px;"} rows="5" cols="40">
+
+                    </textarea>
                 </div>
             </div>
         );
@@ -308,6 +326,7 @@ export default class Index extends Component {
         document.getElementById("match").style.display = "block";
         document.getElementById("kit").style.display = "none";
         document.getElementById("bg").style.display = "none";
+        document.getElementById("note").style.display = "none";
 
     }
 
@@ -316,6 +335,7 @@ export default class Index extends Component {
         document.getElementById("match").style.display = "none";
         document.getElementById("kit").style.display = "none";
         document.getElementById("bg").style.display = "none";
+        document.getElementById("note").style.display = "none";
 
     }
 
@@ -324,8 +344,7 @@ export default class Index extends Component {
         document.getElementById("match").style.display = "none";
         document.getElementById("kit").style.display = "block";
         document.getElementById("bg").style.display = "none";
-
-
+        document.getElementById("note").style.display = "none";
     }
 
     changeBG(){
@@ -341,5 +360,18 @@ export default class Index extends Component {
         document.getElementById("match").style.display = "none";
         document.getElementById("kit").style.display = "none";
         document.getElementById("bg").style.display = "block";
+        document.getElementById("note").style.display = "none";
+    }
+
+    changeToNote(){
+        document.getElementById("main").style.display = "none";
+        document.getElementById("match").style.display = "none";
+        document.getElementById("kit").style.display = "none";
+        document.getElementById("bg").style.display = "none";
+        document.getElementById("note").style.display = "block";
+    }
+
+    toRecommended(){
+        window.open('https://www.amazon.co.uk/Sportswear-Outdoor-Clothing/b?ie=UTF8&node=116189031');
     }
 }
